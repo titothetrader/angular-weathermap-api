@@ -78,7 +78,6 @@ export class SearchLocationComponent implements OnInit {
           dateText = element.dt_txt;
           let spaceIndex = dateText.indexOf(' ');
           dateText = dateText.slice(0, spaceIndex);
-          console.log(dateText);
           let weatherDay: WeatherData = {
             cityName: city,
             description: element.weather[0].description,
