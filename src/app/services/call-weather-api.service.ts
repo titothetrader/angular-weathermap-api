@@ -40,7 +40,7 @@ export class CallWeatherAPIService {
     return response;
   }
 
-  getForecast(searchZip: string) {
+  getForecast(searchZip: string): Observable<any> {
     let response = this.http.get(
       environment.baseURL +
         'forecast?zip=' +

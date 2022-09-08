@@ -1,4 +1,10 @@
-<div class="place-content-center text-center">
-  <search-location (emitWeather)="setWeatherData($event)"></search-location>
-  <weather-map [weatherData]="weatherData"></weather-map>
+<div class="text-center place-content-center">
+  <search-location
+    (emitWeather)="setWeatherData($event)"
+    (emitForecast)="setForecastData($event)"
+  ></search-location>
+  <weather-map
+    [weatherData]="weatherData"
+    [forecastData]="forecastData"
+  ></weather-map>
 </div>

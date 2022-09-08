@@ -1,20 +1,75 @@
-<div *ngIf="weatherData?.icon">
-  <div>
-    <h1>
-      {{ weatherData?.cityName }}
-      <h2>{{ weatherData?.time }}</h2>
-    </h1>
-    <div>
-      <img
-        src="assets/icons/{{ weatherData?.icon }}.png"
-        class="weather-icon"
-      />
-    </div>
-  </div>
-  <div>{{ weatherData?.description }}</div>
-  <div>{{ weatherData?.currentTemperature }}</div>
-  <div>{{ weatherData?.feelsLike }}</div>
-  <div>{{ weatherData?.maxTemperature }}</div>
-  <div>{{ weatherData?.minTemperature }}</div>
-  <div>{{ weatherData?.humidity }}</div>
+<mat-card class="weather-card" *ngIf="weatherData?.icon">
+  <mat-card-title-group class="weather-title">
+    <mat-card-title>{{ weatherData?.cityName }}</mat-card-title>
+    <mat-card-subtitle>{{ weatherData?.description }}</mat-card-subtitle>
+    <img src="assets/icons/{{ weatherData?.icon }}.png" class="weather-icon" />
+  </mat-card-title-group>
+  <mat-card-content>
+    <table class="mx-auto mt-5">
+      <tbody>
+        <tr>
+          <td>Current Temp:</td>
+          <td>{{ weatherData?.currentTemperature }}°</td>
+        </tr>
+        <tr>
+          <td>Feels Like:</td>
+          <td>{{ weatherData?.feelsLike }}°</td>
+        </tr>
+        <tr>
+          <td>MAX Temp:</td>
+          <td>{{ weatherData?.maxTemperature }}°</td>
+        </tr>
+        <tr>
+          <td>MIN Temp:</td>
+          <td>{{ weatherData?.minTemperature }}°</td>
+        </tr>
+        <tr>
+          <td>Humidity:</td>
+          <td>{{ weatherData?.humidity }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
+  <mat-card-footer class="weather-footer"
+    >As of: {{ weatherData?.time }}</mat-card-footer
+  >
+</mat-card>
+
+<div class="forecast-cards">
+  <mat-card class="weather-card" *ngFor="let forecast of forecastData">
+    <mat-card-title-group class="weather-title">
+      <mat-card-title>{{ forecast?.cityName }}</mat-card-title>
+      <mat-card-subtitle>{{ forecast?.description }}</mat-card-subtitle>
+      <img src="assets/icons/{{ forecast?.icon }}.png" class="weather-icon" />
+    </mat-card-title-group>
+    <mat-card-content>
+      <table class="mx-auto mt-5">
+        <tbody>
+          <tr>
+            <td>Current Temp:</td>
+            <td>{{ forecast?.currentTemperature }}°</td>
+          </tr>
+          <tr>
+            <td>Feels Like:</td>
+            <td>{{ forecast?.feelsLike }}°</td>
+          </tr>
+          <tr>
+            <td>MAX Temp:</td>
+            <td>{{ forecast?.maxTemperature }}°</td>
+          </tr>
+          <tr>
+            <td>MIN Temp:</td>
+            <td>{{ forecast?.minTemperature }}°</td>
+          </tr>
+          <tr>
+            <td>Humidity:</td>
+            <td>{{ forecast?.humidity }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </mat-card-content>
+    <mat-card-footer class="weather-footer"
+      >For: {{ forecast?.time }}</mat-card-footer
+    >
+  </mat-card>
 </div>

@@ -1,3 +1,19 @@
 .weather-icon {
-  @apply mx-auto w-14;
+  @apply mx-auto mr-0 w-14;
+}
+
+.weather-card {
+  @apply w-[20vw] mx-auto mt-10 bg-gradient-to-b from-cyan-300 content-center;
+}
+
+.weather-title {
+  @apply font-bold;
+}
+
+.weather-footer {
+  @apply bg-slate-200;
+}
+
+.forecast-cards {
+  @apply grid content-center w-full grid-cols-4 gap-4;
 }

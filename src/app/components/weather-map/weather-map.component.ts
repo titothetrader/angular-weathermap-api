@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { ForecastData } from 'src/app/interfaces/forecast-data';
 import { WeatherData } from 'src/app/interfaces/weather-data';
 
 @Component({
@@ -8,8 +9,12 @@ import { WeatherData } from 'src/app/interfaces/weather-data';
 })
 export class WeatherMapComponent implements OnInit {
   @Input() weatherData: WeatherData | undefined;
+  @Input() forecastData: WeatherData[] | undefined;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
+
+  
 }

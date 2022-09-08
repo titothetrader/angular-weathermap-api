@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 
 import { WeatherMapComponent } from './components/weather-map/weather-map.component';
 import { SearchLocationComponent } from './components/search-location/search-location.component';
@@ -24,6 +25,7 @@ import { SearchLocationComponent } from './components/search-location/search-loc
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

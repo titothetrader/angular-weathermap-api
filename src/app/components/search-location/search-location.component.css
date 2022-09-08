@@ -1,0 +1,7 @@
+.header {
+  @apply my-12;
+}
+
+button {
+  @apply m-5;
+}
