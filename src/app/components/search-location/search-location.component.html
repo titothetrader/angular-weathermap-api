@@ -1,0 +1,38 @@
+<div>
+  <span class="text-3xl font-bold"> Weather: Know Before You Go!</span>
+</div>
+<div class="">
+  <div>
+    <mat-form-field class="example-form-field" appearance="fill">
+      <mat-label>Enter US Zip Code</mat-label>
+      <input matInput type="text" [(ngModel)]="searchZip" />
+      <button
+        *ngIf="searchZip"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="clearSearch()"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  <div>
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="!searchZip"
+      (click)="getWeather()"
+    >
+      Current Weather
+    </button>
+    <button
+      mat-raised-button
+      color="secondary"
+      [disabled]="!searchZip"
+      (click)="getForecast()"
+    >
+      Five Day Forecast
+    </button>
+  </div>
+</div>

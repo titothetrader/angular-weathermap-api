@@ -1,0 +1,20 @@
+<div *ngIf="weatherData?.icon">
+  <div>
+    <h1>
+      {{ weatherData?.cityName }}
+      <h2>{{ weatherData?.time }}</h2>
+    </h1>
+    <div>
+      <img
+        src="assets/icons/{{ weatherData?.icon }}.png"
+        class="weather-icon"
+      />
+    </div>
+  </div>
+  <div>{{ weatherData?.description }}</div>
+  <div>{{ weatherData?.currentTemperature }}</div>
+  <div>{{ weatherData?.feelsLike }}</div>
+  <div>{{ weatherData?.maxTemperature }}</div>
+  <div>{{ weatherData?.minTemperature }}</div>
+  <div>{{ weatherData?.humidity }}</div>
+</div>
