@@ -71,13 +71,14 @@ export class SearchLocationComponent implements OnInit {
     this.forecastData.splice(0, this.forecastData.length);
     this.callWeatherAPI.getForecast(this.searchZip).subscribe(
       (res) => {
-        console.log(res);
         let city: string = res.city.name;
+        let dateText = '';
+        let prevDateText = '';
         res.list.forEach((element: any) => {
-          let dateText = element.dt_txt;
+          dateText = element.dt_txt;
           let spaceIndex = dateText.indexOf(' ');
           dateText = dateText.slice(0, spaceIndex);
-          // console.log(element);
+          console.log(dateText);
           let weatherDay: WeatherData = {
             cityName: city,
             description: element.weather[0].description,
@@ -87,11 +88,13 @@ export class SearchLocationComponent implements OnInit {
             feelsLike: element.main.feels_like,
             humidity: element.main.humidity,
             icon: element.weather[0].icon,
-            time: element.dt_txt,
+            time: dateText,
           };
-          this.forecastData.push(weatherDay);
+          if (prevDateText !== dateText) {
+            this.forecastData.push(weatherDay);
+            prevDateText = dateText;
+          }
         });
-        // this.forecastData.details = res.list;
       },
       (error) => {
         console.log('Could not fetch Weather - Error: ' + error);

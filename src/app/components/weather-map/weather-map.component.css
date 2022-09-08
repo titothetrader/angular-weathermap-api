@@ -15,5 +15,5 @@
 }
 
 .forecast-cards {
-  @apply grid content-center w-full grid-cols-4 gap-4;
+  @apply grid content-center w-full grid-cols-3 gap-4;
 }
